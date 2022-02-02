@@ -1,0 +1,26 @@
+<template name="productoDetail">
+	{{#with producto}}
+		<div class="row">
+			<hr />
+			<div class="col s12 m8 offset-m2">
+				<div class="card blue-grey darken-1">
+					<div class="card-content white-text">
+									<span class="card-title">{{name}}</span>
+							<p>{{summary}}</p>
+							<hr />
+							<h5 class="card-title">detalle del item</h5>
+									{{#if items}}
+										<ul>
+											{{#each items}}
+												<li>{{item}}</li>
+														{{/each}}
+										</ul>
+								{{else}}
+											<p>No hay stock de este producto</p>
+													{{/if}}
+					</div>					
+				</div>				
+			</div>			
+		</div>
+	{{/with}}
+</template>

@@ -1,0 +1,24 @@
+<template name="clienteForm">
+	<div class="row">
+		<div class="col s12">
+			<h2>Crear nuevo Cliente</h2>
+			<a class="btn" href="{{ pathFor 'clientes'}}">
+				Volver al listado de Cliente</a>
+	</div>
+
+		<div class="divider"></div>
+
+
+		<label for="start">Fecha Compra:</label>
+		<input type="date" id="start" name="trip-start"
+       	value="0000-00-00" min="0000-01-01" max="2070-12-31">
+		
+		<div class="col s12">
+
+		{{>quickForm collection=formCollection id="clienteForm" type="insert"}}
+
+	
+		</div>
+	</div>
+	
+</template>

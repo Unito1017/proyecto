@@ -1,0 +1,30 @@
+<template name="projects">
+	<div class="row">
+		<h2>Provedor</h2>
+		<a class="btn" href="{{ pathFor 'client_form'}}">
+			Añadir nuevo Provedor
+		</a>
+		{{> EasySearch.Input index=provedors}}
+		<ul class="collection with-header">	
+			{{#EasySearch.Each index=provedors}}		
+			<li class="collection-item">
+				<div>
+					{{name}}
+					{{>project_links}}
+					{{fecha_compra}}
+				</div>
+			</li>
+			
+			{{/EasySearch.Each}}
+
+			{{#EasySearch.IfNoResults index=projects}}
+				<li class="collection-item">No hay resultados ...</li>
+			{{/EasySearch.IfNoResults}}
+
+			{{#EasySearch.IfSearching index=projects}}
+				<li class="collection-item">Buscando ...</li>
+			{{/EasySearch.IfSearching}}
+		</ul>
+		{{>EasySearch.Pagination index=projects}}
+	</div>
+</template>

@@ -1,0 +1,26 @@
+<template name="stock">
+	
+		{{> EasySearch.Input index=productos}}
+		<ul class="collection with-header">	
+			{{#EasySearch.Each index=productos}}		
+			<li class="collection-item">
+				<div>
+					asdasddsadsadsd
+					{{name}}
+					{{>producto_links}}
+				</div>
+			</li>			
+						{{/EasySearch.Each}}
+
+						{{#EasySearch.IfNoResults index=productos}}
+			<li class="collection-item">No hay ningun producto ...</li>
+						{{/EasySearch.IfNoResults}}
+
+						{{#EasySearch.IfSearching index=productos}}
+			<li class="collection-item">Buscando ...</li>
+						{{/EasySearch.IfSearching}}
+		</ul>
+					{{>EasySearch.Pagination index=productos}}
+
+</template>
+
